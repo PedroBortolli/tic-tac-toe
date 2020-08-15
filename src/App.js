@@ -21,7 +21,7 @@ function App() {
     useEffect(resetGame, [gridSize])
 
     useEffect(() => {
-        const gameWinner = checkWinner(game.grid, gridSize)
+        const gameWinner = checkWinner(game.grid)
         if (gameWinner) setWinner(gameWinner)
     }, [game])
 
