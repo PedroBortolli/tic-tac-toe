@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import checkWinner from './checkWinner'
+import Peer from 'peerjs'
 
 function App() {
     const [game, changeGame] = useState({ grid: {}, turn: 'X' })
@@ -17,6 +18,11 @@ function App() {
         })
         setWinner(null)
     }
+
+    useEffect(() => {
+        const peer = new Peer()
+        console.log('peer => ', peer)
+    }, [])
 
     useEffect(resetGame, [gridSize])
 
